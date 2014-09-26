@@ -1,5 +1,9 @@
-sudo docker pull centos
-sudo docker run -t -i centos:latest /bin/bash
+FROM       centos:centos6
+MAINTAINER Surya Mandadapu <mandadapu99@gmail.com>
+
+ADD CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+
+RUN yum -y install autoconf man git db4 db4-devel libtool-ltdl libtool-ltdl-devel openssl-devel
 
 yum install wget vim initscripts
 yum install http://dl.fedoraproject.org/pub/epel/beta/7/x86_64/epel-release-7-0.2.noarch.rpm
